@@ -40,21 +40,6 @@ begin_column:
     jmp begin_column
 end_column:
 
-    sub $32, %rsp
-    fstl (%rsp)
-    vmovsd (%rsp), %xmm0
-    call printDouble
-    add $32, %rsp
-
-    fxch %st(1)
-    sub $32, %rsp
-    fstl (%rsp)
-    vmovsd (%rsp), %xmm0
-    call printDouble
-    add $32, %rsp
-    fxch %st(1)
-
-
 
   fsubrp
 

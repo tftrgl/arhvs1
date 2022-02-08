@@ -4,7 +4,7 @@
 extern "C" double foo(double** X, size_t N, size_t M, int i, int j);
 extern "C" void printDouble(double x);
 
-double boo(double** p, int N, int M)
+double initAndPrint(double** p, int N, int M)
 {
   for (int i = 0; i < N; i++)
   {
@@ -29,12 +29,15 @@ int main()
 {
   const int N = 6;
   const int M = 6;
+  const int i = 0;
+  const int j = 1;
 
   double** k = new double*[N];
-  boo(k,N,M);
-  double z = foo(k, N, M, 0, 1);
+  printf("foo(A, %i, %i, %i, %i) in matrix:\n", N, M, i, j);
+  initAndPrint(k,N,M);
+  double z = foo(k, N, M, i, j);
 
-  printf("%.9f\n", z);
+  printf("Answer: %.9f\n", z);
   return 0;
 
   for (int i = 0; i < N; i++)
